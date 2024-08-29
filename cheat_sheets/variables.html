@@ -6,11 +6,23 @@
     <title>Variables Cheat Sheet</title>
 </head>
 <body>
-    
+    <p id="nameprint"></p>
+    <p id="nameprint_temlit"></p>
+    <p id="calculation">0</p>
 
     <script>
         //Vår første javascript kommentar. Og vår aller første variabel:
         const firstname = "Madelen"
+        //skriver ut firstname  til konsollen
+        console.log(firstname)
+        //Skriver ut firstname til HTML med konkatinering
+        document.getElementById("nameprint").innerHTML = "Hei " + firstname
+        //SKriv ut firstname til HTML med tamplate literal
+        document.getElementById("nameprint_temlit").innerHTML = `Hei ${firstname}. Går det bra med deg?`
+
+        //Skriv et enkelt mattestykke
+        document.getElementById("calculation").innerHTML = 10 + 5
+
     </script>
 </body>
 </html>
