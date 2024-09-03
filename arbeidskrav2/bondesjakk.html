@@ -214,7 +214,10 @@
                     //Når brikken er plassert på spillerbrettet, må vi sjekke om den - og brikkene rundt - 
                     //utgjør en vinnerkombinasjon. Denne funksjonaliteten ligger i funksjonen sjekkVinner(),
                     //siden dette er et litt større sett med handlinger og kan gi noen ulike utfall.
-                    sjekkVinner();
+
+                    //variabel for å legge til tidsdelay dersom det sjekkets om vi har en vinner
+                     const myTimeout = setTimeout(sjekkVinner, 1000);
+                    //sjekkVinner();
 
                 //Men, hvis cellen ikke er ledig...
                 } else {
