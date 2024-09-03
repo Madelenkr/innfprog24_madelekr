@@ -281,6 +281,8 @@
                 //Sett spillstatus til false, slik at ingen spillere får plassere
                 //flere brikker på brettet - dette løses med sjekken i funksjonen spill()
                 spillStatus = false;
+                //Kilde brukt for å endre bakgrunnsfargen i div. https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_backgroundcolor2
+                document.getElementById("playerturn").style.backgroundColor = "#FFD700";
             }
         }
 
