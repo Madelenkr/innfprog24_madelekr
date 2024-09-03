@@ -9,10 +9,13 @@
     <h2> Er du gammel nok til å kjøre bil?</h2>
     <p id="caremessage"></p>
     <h2> Kan spilleren åpne døren?</h2>
+    <p id="doormessage"> Velg dør for å sjekke</p>
     <p id="doormessage"></p>
+    <h2> Kan jeg pensjonere meg?</h2>
+    <P id="retire"></P>
 
     <script>
-        const age = 8
+        const age = 64
         const passed = false
         //If-test for å sjekke om vi er gamle nok:
         if(age >= 18 && passed === true) {
@@ -22,7 +25,30 @@
         }
 
         //Vi skal sjekke om døren er låst, og om spilleren har nøkkel for å låse opp
-        
+        const door1_locked = true
+        const door2_locked = false
+        const backpack = "key"
+        let doormessage = document.getElementById("doormessage")
+        console.log(doormessage)
+        if(door2_locked === false) {
+            doormessage.innerHTML = "Ja"
+        } else{
+            if(backpack === "key"){
+                doormessage.innerHTML = "Ja"
+            } else{
+                doormessage.innerHTML = "Nei"
+            }
+        }
+
+        //Sjekke av mulig persjonsalder:
+        if(age >= 62 && age < 67) {
+            document.getElementById("retire").innerHTML = "Du kan gå av med AFP."
+        } else if (age >= 67) {
+            document.getElementById("retire").innerHTML = "Du kan gå av med full pensjon."
+        } else{
+            document.getElementById("retire").innerHTML = `Du kan gå av med AFP om ${62 - age} år,
+            og full pensjon om ${67 - age} år`
+        }
     </script>
 </body>
 </html>
