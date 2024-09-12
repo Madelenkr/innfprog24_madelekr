@@ -9,12 +9,13 @@
     <p id="utskrift"></p>
     
 <script>
-
+    //Skriv ut lite med 10 dyrearter
     const dyr = [ "Hund", "Katt", "Fisk", "Gnagere", "Reptil", "Elg", "Råtte", "Elefant", "Frosk", "Hest" ]
 
-    let dyrearter = `Her er det listet opp noen dyr: for eksempel ${dyr [2]} og ${dyr [6]} `
-
-    const index = 2 
+        //Skriver let fordi listen kan endres, templet literal for man kan kombinere tekst og kodespråk. man skriver ${} for å få ut dataen,
+        //og skrive navnet på listen og tallet for å få ut riktig index. [] bruker vi for å få ut arrayen
+    let dyrearter = `Her er det listet opp noen dyr: for eksempel ${dyr [2]} og ${dyr [6]} 
+    `
     document.getElementById("utskrift").innerHTML = dyrearter
 
 
