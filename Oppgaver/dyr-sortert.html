@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyr</title>
+</head>
+<body>
+    <p id="utskrift"></p>
+    <h3><span> id="antalldyr">0</span></h3>
+    
+<script>
+    //Skriv ut lite med 10 dyrearter
+    const dyr = [ "Hund", "Katt", "Fisk", "Gnagere", "Reptil", "Elg", "Råtte", "Elefant", "Frosk", "Hest" ]
+    //Skriver .push for å legge til to nye dyr i listen vår (array)
+    dyr.push("Fugle", "Hval")
+
+    //skriver .sort for å sortere rekkefølgen
+    dyr.sort()
+    dyr.sort(function(a, b) {return a - b})
+
+    document.getElementById("dyr").innerHTML = dyr.length
+
+
+    //Skriver til console for inspekt
+    console.log(dyr)
+</script>
+
+</body>
+</html>
