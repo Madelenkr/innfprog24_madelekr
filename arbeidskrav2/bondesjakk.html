@@ -285,7 +285,13 @@
                 //flere brikker på brettet - dette løses med sjekken i funksjonen spill()
                 spillStatus = false;
                 //Kilde brukt for å endre bakgrunnsfargen i div. https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_style_backgroundcolor2
+                /* celle er id til rutene, vinnerkombo viser hvilken plass som utgjør vinner kombinasjonen.
+                 tok celle + vinnerkomboplass for å få riktig id, kilde brukt: https://www.w3schools.com/jsref/prop_style_color.asp*/
                 document.getElementById("playerturn").style.backgroundColor = "#FFD700";
+                document.getElementById("celle"+vinnerKomboPlass1).style.color = "#FFD700";
+                document.getElementById("celle"+vinnerKomboPlass2).style.color = "#FFD700";
+                document.getElementById("celle"+vinnerKomboPlass3).style.color = "#FFD700";
+                
             }
         }
 
