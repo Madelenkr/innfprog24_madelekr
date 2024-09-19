@@ -307,13 +307,17 @@
 
         //oppgave 5. Få spiller til å telle, fikk hjelp av hanna sørum for å finne variabelen let i koden 
 
-        let antallrunder = 0 
+        let antallrunder = 1;
         function restartGame() {
+            //setter bakgrunnsfarge tilbake til grå
+            document.getElementById("playerturn").style.backgroundColor = "#ccc";
             // 1)
             spillerBrikker = ["","","","","","","","",""];
             var celleteller = 0;
             while (celleteller < 9) {
                 document.getElementById("celle" + celleteller).innerHTML = "";
+                //setter alle spillbrikker tilbake til hvit
+                document.getElementById("celle"+ celleteller).style.color = "white";
                 celleteller++;
             }
             // 2)
@@ -323,8 +327,8 @@
             playermark = "X";
             // 4)
             document.getElementById("playerturn").innerHTML = 'Spiller <span id="player">1</span> (<span id="playermark">X</span>) sin tur:';
-         antallrunder++
-         document.getElementById("rundeteller").innerHTML = antallrunder  
+         antallrunder++;
+         document.getElementById("rundeteller").innerHTML = antallrunder;
         }
     </script>
 </body>
