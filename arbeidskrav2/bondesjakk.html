@@ -86,6 +86,9 @@
     </section>
     <button id="newgame" onclick="restartGame()">Start spill på nytt</button>
 
+
+    <section id="rundeteller" <p id="antallrunder"> antall runder </p></section>
+
     <script>
         /* For å forstå hvorfor vi har celle-IDene 0 - 8 i HTML-koden over:
         I alle programmeringsspråk brukes arrayer for å lagre strukturert informasjon.
@@ -217,7 +220,7 @@
 
                     //variabel for å legge til tidsdelay dersom det sjekkets om vi har en vinner. Kilde https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout1
                     const myTimeout = setTimeout(sjekkVinner, 1000);
-                    //sjekkVinner();
+                    sjekkVinner();
 
                 //Men, hvis cellen ikke er ledig...
                 } else {
@@ -301,6 +304,10 @@
         // 3) Sette turen til spiller en og spillersymbolet til X
         // 4) Fjerne melding om vinner eller uavgjort, og oppdatere med spillers tur-tekst
         //Dette samler vi i en funksjon, slik at vi kan kalle funksjonen og utføre alle disse tingene når vi trenger det:
+
+        //oppgave 5. Få spiller til å telle, fikk hjelp av hanna sørum for å finne variabelen let i koden 
+
+        let antallrunder = 0 
         function restartGame() {
             // 1)
             spillerBrikker = ["","","","","","","","",""];
@@ -316,6 +323,8 @@
             playermark = "X";
             // 4)
             document.getElementById("playerturn").innerHTML = 'Spiller <span id="player">1</span> (<span id="playermark">X</span>) sin tur:';
+         antallrunder++
+         document.getElementById("rundeteller").innerHTML = antallrunder  
         }
     </script>
 </body>
