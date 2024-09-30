@@ -67,6 +67,17 @@
             color: white;
             cursor: pointer;
         }
+
+        #rundeteller {
+            font-family: Helvetica;
+            font-size: 25px;
+            border-style: solid;
+            width: 400px;
+            display: block;
+            margin: 4px auto;
+            background-color: #fff;
+            
+        }
     </style>
 
 </head>
@@ -87,7 +98,7 @@
     <button id="newgame" onclick="restartGame()">Start spill på nytt</button>
 
 
-    <section id="rundeteller" <p id="antallrunder"> antall runder </p></section>
+    <section id="rundeteller" <p id="antallrunder"> Antall spill: 1</p></section>
 
     <script>
         /* For å forstå hvorfor vi har celle-IDene 0 - 8 i HTML-koden over:
@@ -222,6 +233,7 @@
                     const myTimeout = setTimeout(sjekkVinner, 1000);
                     //sjekkVinner();
 
+
                 //Men, hvis cellen ikke er ledig...
                 } else {
                     //...skriver vi ut en beskjed til spilleren, og lar han velge en ny celle.
@@ -280,6 +292,15 @@
 
             //Hvis runden er vunnet, skal vi gjøre noen handlinger:
             if(rundenVunnet === true) {
+                //bytter tilbake til riktig spiller pga setTimeout er asynkron og endrer flowen til koden. 
+                //Kilde: https://stackoverflow.com/questions/17883692/how-to-set-time-delay-in-javascript
+                if (player === 1) {
+                    player = 2;
+                    playermark = "O";
+                } else {
+                    player = 1;
+                    playermark = "X";
+                }
                 //Skriv ut hvilken spiller som har vunnet
                 document.getElementById("playerturn").innerHTML = "Spiller " + player + " har vunnet!";
                 //Gjør restart spill-knappen synlig
@@ -328,7 +349,7 @@
             // 4)
             document.getElementById("playerturn").innerHTML = 'Spiller <span id="player">1</span> (<span id="playermark">X</span>) sin tur:';
          antallrunder++;
-         document.getElementById("rundeteller").innerHTML = antallrunder;
+         document.getElementById("rundeteller").innerHTML = "Antall spill: " + antallrunder;
         }
     </script>
 </body>
