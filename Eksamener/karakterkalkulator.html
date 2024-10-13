@@ -9,27 +9,74 @@
 
     <style>
 
+
     </style>
 
     <h1>Karakterkalkulator</h1>
 
+        <!--Kilde til oppsett hentet fra: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_input_test -->
+        <p id="infoX"></p>
         <label for="oppg1">Oppgave 1:</label>
         <input type="number" id="oppg1" name="oppg1"><br><br>
+        <p id="infoY"></p>
         <label for="oppg2">Oppgave 2:</label>
         <input type="number" id="oppg2" name="oppg2"><br><br>
 
-    <button id="beregnkarakter">Beregn karakter</button>
+    <button id="knapp" onclick="beregenKarakter()">Beregn karakter</button>
+    <p id="karakterUtskrift">Karakteren din er</p>
 
     <script>
+       
 
-        const grades = [
-    {grade: "F", treshold: 0},
-    {grade: "E", treshold: 25},
-    {grade: "D", treshold: 44},
-    {grade: "C", treshold: 68},
-    {grade: "B", treshold: 88},
-    {grade: "A", treshold: 100}
-    ]
+    // Kilde til oppsett hentet fra: https://www.w3schools.com/js/tryit.asp?filename=tryjs_validation_number
+    function beregenKarakter() {
+    let x = document.getElementById("oppg1").value;
+    let y = document.getElementById("oppg2").value;
+
+    //Oppgave 1
+    // If x ikke er et tall, eller mindre enn en eller større enn 10
+    let textX;
+    let textY;
+     if (isNaN(x) || x < 0 || x > 10) {
+    textX = "Må være et tall mellom 0 og 10";
+     } else {
+    textX = "";
+     }
+    document.getElementById("infoX").innerHTML = textX;
+
+    //Oppgave 2
+    if (isNaN(y) || y < 0 || y > 12) {
+    textY = "Må være et tall mellom 0 og 12";
+     } else {
+    textY = "";
+     }
+    document.getElementById("infoY").innerHTML = textY;
+
+    //Utregning for karakter i %
+
+    if (textX == "" && textY == ""){
+        const oppg1 = document.getElementById("oppg1").value;
+        const oppg2 = document.getElementById("oppg2").value;
+        console.log((0.3 * (oppg1 / 10 * 100)) + (0.7 * (oppg2 / 12 * 100))+ "%");
+
+         //Karakterer
+         const grades = [
+        {grade: "F", treshold: 0},
+        {grade: "E", treshold: 25},
+        {grade: "D", treshold: 44},
+        {grade: "C", treshold: 68},
+        {grade: "B", treshold: 88},
+        {grade: "A", treshold: 100}
+        ]
+
+        //Kilde til loop hentet fra: https://www.w3schools.com/js/js_loop_for.asp
+        for (let i = 0; i < grades.length; i++) {
+            console.log(grades[i]);
+        }
+
+    }
+
+}
 
     </script>
     
