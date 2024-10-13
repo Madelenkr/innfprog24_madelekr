@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoppeklokke</title>
+</head>
+<body>
+
+    <p id="sec">0</p>
+    <p>SEKUNDER</p>
+    <button id="start">START (S)</button>
+    <button id="stop">STOPP (E)</button>
+
+    <script>
+
+        //HTML-elementer:
+        const secPrint = document.getElementById("sec")
+        const btnStart = document.getElementById("start")
+        const btnStop = document.getElementById("stop")
+
+        //Konfigurasjon
+        let seconds = 0
+        let status = false
+
+        function counter(){
+            if(status === true) {
+            seconds++
+            secPrint.innerHTML = seconds
+            setTimeout(counter, 1000)
+            }
+            
+        }
+
+        function start() {
+            
+        }
+
+        btnStart.addEventListener("click", function() {
+            status = true
+            btnStart.disabled = true
+            counter()
+        
+        })
+
+        btnStop.addEventListener("click", function() {
+            status = false
+            btnStart.disabled = false
+        })
+
+        document.addEventListener("keydown", function(event) {
+            if(event.key === "s") {
+                status = true
+                counter()
+                btnStart.disabled = true
+            }
+        })
+
+
+    </script>
+    
+</body>
+</html>
