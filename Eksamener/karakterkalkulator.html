@@ -8,8 +8,31 @@
 <body>
 
     <style>
+        
+        html {
+            /*Brukt på CSS https://www.w3schools.com/css/css_margin.asp*/
+            font-family: Lucida Console;
+            text-align: left;
+            font-size: large;
+            margin-left: 3%;
+            background-color: rgba(95, 158, 160, 0.089);
+        }
 
+        .knappen {
+            font-family: Lucida Console;
+            padding: 12px;
+            font-size: medium;
+            background-color: cadetblue;
+            color: #fff;
+        }
 
+        #oppg1 {
+            padding: 7px;
+        }
+      
+        #oppg2 {
+            padding: 7px;
+        }
     </style>
 
     <h1>Karakterkalkulator</h1>
@@ -22,8 +45,8 @@
         <label for="oppg2">Oppgave 2:</label>
         <input type="number" id="oppg2" name="oppg2"><br><br>
 
-    <button id="knapp" onclick="beregenKarakter()">Beregn karakter</button>
-    <p id="karakterUtskrift">Karakteren din er</p>
+    <button id="knapp" class="knappen" onclick="beregenKarakter()">Beregn karakter</button>
+    <p id="karakterUtskrift"> Karakteren din vil vises her: </p>
 
     <script>
        
@@ -57,7 +80,7 @@
     if (textX == "" && textY == ""){
         const oppg1 = document.getElementById("oppg1").value;
         const oppg2 = document.getElementById("oppg2").value;
-        console.log((0.3 * (oppg1 / 10 * 100)) + (0.7 * (oppg2 / 12 * 100))+ "%");
+        let karakterVerdi = ((0.3 * (oppg1 / 10 * 100)) + (0.7 * (oppg2 / 12 * 100)));
 
          //Karakterer
          const grades = [
@@ -69,12 +92,23 @@
         {grade: "A", treshold: 100}
         ]
 
-        //Kilde til loop hentet fra: https://www.w3schools.com/js/js_loop_for.asp
-        for (let i = 0; i < grades.length; i++) {
-            console.log(grades[i]);
-        }
+        let karakterTall;
 
+        //Kilde til loop hentet fra: https://www.w3schools.com/js/js_loop_for.asp
+        //kilde for bruk av array med objekter https://www.geeksforgeeks.org/javascript-object-values-method/
+        for (let i = 0; i < grades.length; i++) {
+   
+            if (karakterVerdi >= grades[i].treshold) {
+                karaktertall = i;
+                //console.log(grades[karaktertall].grade);
+            }
+
+        }
+        console.log(grades[karaktertall].grade);
+        document.getElementById("karakterUtskrift").innerHTML = "Karakteren din er: " + grades[karaktertall].grade;
+        console.log(grades[0]);
     }
+
 
 }
 
