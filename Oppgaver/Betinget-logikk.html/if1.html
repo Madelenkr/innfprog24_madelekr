@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If1</title>
+</head>
+<body>
+
+    <p id="Test"></p>
+    <script>
+        //Variabel med navnet mitt
+        const name = "Madelen"
+
+        //Variabel som ikke er deklarert enda
+        let utskrift;
+
+        //Lage if test 
+        if( name === "Madelen") {
+            utskrift = "Mitt navn er " + name
+        }
+
+        else {
+            utskrift = "Jeg heter ikke " + name
+        }
+
+        document.getElementById("Test").innerHTML = utskrift
+        console.log("Utskrift")
+
+
+
+    </script>
+    
+</body>
+</html>

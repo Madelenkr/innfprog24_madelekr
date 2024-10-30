@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvningsopgave 2.</title>
+</head>
+<body>
+
+    <p id="Klar"></p>
+
+    <script>
+
+        //Skrive alderen min og en dekalert variabel
+        const alder= 25
+        let utskrift;
+
+
+        //Lage en betingelse med if test
+        if(alder < 18 ) {
+            utskrift = "Du er ikke myndig"
+        }
+
+        //Når du skal ha en betignelse til må du burde else if.
+        //For å sjekke alderen må du gjenta variabelen i begge betingelsene
+
+         else if (alder >= 18 && alder <= 62 ) {
+            utskrift = "Du er myndig og klar for studier eller arbeidslivet"
+        }
+
+        //Du kan ikke ha betingelse i else koden, 
+        else {
+            utskrift = "Du er pensjonsklar!"
+        }
+
+        document.getElementById("Klar").innerHTML = utskrift
+        console.log("Klar")
+    </script>
+    
+</body>
+</html>
