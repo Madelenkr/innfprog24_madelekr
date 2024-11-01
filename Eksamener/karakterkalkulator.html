@@ -60,27 +60,25 @@
     // If x ikke er et tall, eller mindre enn en eller større enn 10
     let textX;
     let textY;
-     if (isNaN(x) || x < 0 || x > 10) {
-    textX = "Må være et tall mellom 0 og 10";
-     } else {
+     if (x >= 0 && x <= 10) {
     textX = "";
+     } else {
+        textX = "Må være et tall mellom 0 og 10";
      }
     document.getElementById("infoX").innerHTML = textX;
 
     //Oppgave 2
-    if (isNaN(y) || y < 0 || y > 12) {
-    textY = "Må være et tall mellom 0 og 12";
-     } else {
+    if ( y >=0 && y <= 12) {
     textY = "";
+     } else {
+    textY = "Må være et tall mellom 0 og 12";
      }
     document.getElementById("infoY").innerHTML = textY;
 
     //Utregning for karakter i %
 
-    if (textX == "" && textY == ""){
-        const oppg1 = document.getElementById("oppg1").value;
-        const oppg2 = document.getElementById("oppg2").value;
-        let karakterVerdi = ((0.3 * (oppg1 / 10 * 100)) + (0.7 * (oppg2 / 12 * 100)));
+    if (textX === "" && textY === ""){
+        let karakterVerdi = ((0.3 * (x / 10 * 100)) + (0.7 * (y / 12 * 100)));
 
          //Karakterer
          const grades = [
